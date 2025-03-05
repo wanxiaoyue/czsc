@@ -15,7 +15,7 @@ def test_check_freq_and_market():
     from czsc.utils.bar_generator import check_freq_and_market
     # gruop_name = "期货主力"
     gruop_name = "中证500成分股"
-    files = Path(fr"D:\CZSC投研数据\{gruop_name}").glob("*.parquet")
+    files = Path(fr"/Users/wangwang/Desktop/person_wy/study/缠师/czsc/投研数据/CZSC投研数据/{gruop_name}").glob("*.parquet")
     for file in files:
         df = pd.read_parquet(file)
         time_seq = sorted(list({x.strftime("%H:%M") for x in df['dt']}))
@@ -26,7 +26,7 @@ def test_check_freq_and_market():
 
 
 def get_future_times():
-    files = Path(r"D:\CZSC投研数据\期货主力").glob("*.parquet")
+    files = Path(r"/Users/wangwang/Desktop/person_wy/study/缠师/czsc/投研数据/CZSC投研数据/期货主力").glob("*.parquet")
     times = {}
     for file in files:
         df = pd.read_parquet(file)
